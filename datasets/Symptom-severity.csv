@@ -10,10 +10,10 @@ stomach_pain,5
 acidity,3
 ulcers_on_tongue,4
 muscle_wasting,3
-vomiting,5
+vomiting,2
 burning_micturition,6
 spotting_urination,6
-fatigue,4
+fatigue,3
 weight_gain,3
 anxiety,4
 cold_hands_and_feets,5
@@ -26,7 +26,7 @@ irregular_sugar_level,5
 cough,4
 high_fever,7
 sunken_eyes,3
-breathlessness,4
+breathlessness,9
 sweating,3
 dehydration,4
 indigestion,5
@@ -55,7 +55,7 @@ redness_of_eyes,5
 sinus_pressure,4
 runny_nose,5
 congestion,5
-chest_pain,7
+chest_pain,10
 weakness_in_limbs,7
 fast_heart_rate,5
 pain_during_bowel_movements,5

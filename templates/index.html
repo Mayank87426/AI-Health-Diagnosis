@@ -12,7 +12,6 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-
       background-size: cover;
       min-height: 100vh;
       padding-bottom: 50px;
@@ -143,13 +142,10 @@
       <form action="/predict" method="post">
         <label for="symptoms" class="form-label">Enter Symptoms (comma-separated):</label>
         <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="e.g., headache, fatigue, itching" />
-
         <div id="transcription" class="mt-3 text-muted"></div>
-
         {% if message %}
         <p class="text-danger mt-2">{{ message }}</p>
         {% endif %}
-
         <button type="submit" class="btn btn-submit w-100 mt-4">Diagnose</button>
       </form>
     </div>
@@ -158,20 +154,8 @@
   {% if predicted_disease %}
   <div class="container mt-5 animate__animated animate__fadeInUp">
     <h2 class="text-center mb-4">Diagnosis Results</h2>
-
     <div class="text-center mb-4">
       <p class="fw-bold">Predicted Disease: <span class="text-muted">{{ predicted_disease }}</span></p>
-      {% if confidence %}
-      <p class="fw-bold">Probability:</p>
-      <div class="progress mx-auto" style="height: 25px; max-width: 500px;">
-        {# Divide by 100 and then round. This assumes 'confidence' is an integer like 85. #}
-        {# If 'confidence' is already a float like 0.85, this will make it tiny (0.0085) #}
-        {# which then rounds to 0 for display. Be careful with this logic. #}
-        <div class="progress-bar bg-success" role="progressbar" style="width: {{ (confidence / 100) | round }}%;" aria-valuenow="{{ (confidence / 100) | round }}" aria-valuemin="0" aria-valuemax="100">
-          {{ (confidence / 100) | round }}%
-        </div>
-      </div>
-      {% endif %}
     </div>
 
     {% if similar_diseases %}
@@ -179,12 +163,8 @@
       <h5 class="mb-2">🧠 Other Possible Diseases</h5>
       <ul class="list-group list-group-flush mx-auto" style="max-width: 500px;">
         {% for name, score in similar_diseases %}
-        <li class="list-group-item">
-          {# Divide by 100 and then round. Same caution as above. #}
-          <strong>{{ name }}</strong> — <span class="text-muted">{{ (score / 100) | round }}%</span>
-        </li>
+        <li class="list-group-item"><strong>{{ name }}</strong></li>
         {% endfor %}
-
       </ul>
     </div>
     {% endif %}
@@ -241,6 +221,5 @@
   {% endfor %}
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
