@@ -183,7 +183,7 @@ def home():
                 message=f"❗ Please enter at least 3 valid symptoms. Unrecognized: {', '.join(invalid_entries) or 'None'}"
             )
 
-        # Get model prediction
+        
         predicted_disease, confidence, similar_diseases = get_predicted_value(valid_symptoms)
 
         # Replace invalid diseases with fallbacks
